@@ -50,6 +50,8 @@ gem 'carrierwave', '~> 2.0'
 gem 'aws-sdk-s3', '~> 1'
 gem 'aws-sdk-rails', '~> 3'
 gem 'fog-aws', '~> 3.22'
+gem 'delayed_job_active_record'
+gem 'request_store'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
