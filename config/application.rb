@@ -6,11 +6,6 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-if ENV['START_UNOSERVER'] == 'true'
-  Thread.new { system('unoserver') }
-  sleep 1
-end
-
 module Workspace
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

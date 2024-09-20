@@ -20,8 +20,7 @@ module UnoPdfPreview
       end
 
       def filter_options
-        {
-        }
+        {}
       end
 
       def full_filename(for_file)

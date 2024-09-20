@@ -1,4 +1,4 @@
-class DocumentUploader < ApplicationUploader
+class PreviewUploader < ApplicationUploader
   def store_dir
     nil
   end
