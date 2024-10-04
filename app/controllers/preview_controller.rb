@@ -1,6 +1,6 @@
 class PreviewController < ApplicationController
   def create
-    PreviewService.call(**permitted_params.to_h.symbolize_keys)
+    MakePreviewJob.perform_later(**permitted_params.to_h.symbolize_keys)
   end
 
   def permitted_params
