@@ -21,10 +21,8 @@ class PreviewService
   def process
     RequestStore[:bucket] = options[:bucket]
     uploader.recreate_versions!
-    update_record!
+    log
     perform_callback(versions: uploader.versions)
-  rescue StandardError => error
-    perform_callback(error: error)
   end
 
   def perform_callback(**response_params)
@@ -35,10 +33,9 @@ class PreviewService
     )
   end
 
-  def update_record!
-    uploader.versions.each do |version_name, uploader|
-      puts version_name
-      puts uploader.url
+  def log
+    uploader.versions.each do |_, uploader|
+      RAILS::Logger.log uploader.url
     end
   end
 

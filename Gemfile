@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.3.3"
 
-gem 'dotenv'
+gem 'dotenv-rails', require: 'dotenv/load'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
@@ -14,7 +14,7 @@ gem "sprockets-rails"
 gem "sqlite3"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -63,13 +63,22 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'awesome_print', require: 'ap'
+  gem 'awesome_print'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  # Deployment
+  gem 'capistrano', require: false
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
+  gem 'capistrano3-delayed-job'
+  gem 'bcrypt_pbkdf', require: false
+  gem 'ed25519', require: false
 end
 
 group :test do
