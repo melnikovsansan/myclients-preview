@@ -86,3 +86,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "delayed_job_web", "~> 1.4"

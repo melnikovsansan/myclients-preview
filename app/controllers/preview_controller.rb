@@ -1,6 +1,4 @@
 class PreviewController < ApplicationController
-  def index
-  end
 
   def create
     MakePreviewJob.perform_later(**permitted_params.to_h.symbolize_keys)

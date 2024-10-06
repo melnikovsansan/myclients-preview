@@ -4,5 +4,5 @@ if $ARGV.include?("jobs:work")
   end
 end
 
-Delayed::Worker.max_run_time = 10.hours
+Delayed::Worker.max_run_time = 10.minutes
 Delayed::Worker.raise_signal_exceptions = :term
